@@ -16,4 +16,9 @@ p1.print()
 p2.name = "전우치"
 p2.print()
 
+#런타임시에 변수 추가 
+Person.title = "new title"
+print(p1.title)   #p1에 없다 하지만 위로 person 가서 찾는다 에러 안난다  
+print(p2.title)
+print(Person.title)
 
