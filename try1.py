@@ -10,7 +10,7 @@ def divide(a,b):
 #에러 처리
 try:
     # 함수 호출
-    result = divide(5,0)
+    result = divide(5,2)
     print("결과:{0}".format(result))
 except ZeroDivisionError:
     print("0으로 나누면 안됩니다.")
