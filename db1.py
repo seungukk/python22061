@@ -20,7 +20,15 @@ datalist = (("tom","010-123"), ("dsp","010-456"))
 cur.executemany("insert into PhoneBook values (?, ?);", (datalist))
 
 #검색
-cur.execute("select * from PhoneBook;")
+cur.execute("select * from PhoneBook;")  
 
-for row in cur:
-    print(row[0]+ " , "+ row[1]) #여러개면 무조건 튜플로 나옴 
+# 검색메서드 사용 
+print("---fetchone()---")
+print(cur.fetchone())    # 한건 가져와 임시메모리에 가져오고 삭제 
+print("---fetchmany(2)---")
+print(cur.fetchmany(2)) #두건 
+print("---fetchone()---")
+cur.execute("select * from PhoneBook;") #다시 검색하면 재생성됨 >마지막 다나옴 
+print(cur.fetchall())   #나머지 다가져와  
+# for row in cur:
+#     print(row[0]+ " , "+ row[1]) #여러개면 무조건 튜플로 나옴 
